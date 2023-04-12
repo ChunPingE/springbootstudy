@@ -67,7 +67,7 @@ public class Controller07 {
 		model.addAttribute("country", "한국");
 		model.addAttribute("movieList", List.of("스즈메의문단속", "던전앤드래곤", "슬램덩크"));
 	}
-	
+
 	@RequestMapping("link8")
 	public void method8(Model model) {
 		Dto01 o1 = new Dto01();
@@ -75,4 +75,29 @@ public class Controller07 {
 		o1.setAge(40);
 		model.addAttribute("player", o1);
 	}
+
+	// method9 작성
+	// Dto02클래스 작성
+	// 경로 : /sub7/link9로 요청오면 Dto02객체 만들어서 model attribute추가
+	// view : /sub7/link9로 포워드
+	@RequestMapping("link9")
+	public void method09(Model model) {
+		Dto02 dto = new Dto02();
+		dto.setModel("제네시스");
+		dto.setPrice(10000);
+		dto.setCompany("현대");
+
+		model.addAttribute("value", dto);
+	}
+	
+	@RequestMapping("link10")
+	public void method10(Model model) {
+		Dto04 dto = new Dto04();
+		dto.setName("송태섭");
+		dto.setAge(20);
+		
+		model.addAttribute("val", dto);
+	}
+	
+
 }
