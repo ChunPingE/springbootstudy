@@ -1,8 +1,7 @@
 package com.example.demo.controller;
 
 import java.sql.*;
-
-import javax.sql.*;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
@@ -86,5 +85,54 @@ public class Controller11 {
 			e.printStackTrace();
 		}
 		model.addAttribute("productName", productName);
+	}
+
+	@RequestMapping("link4")
+	public void method04(Model model) {
+		// 업무 : 고객이름들 조회
+		String sql = "SELECT CustomerName FROM Customers";
+
+		// list에 고객이름 담기
+		List<String> list = new ArrayList<>();
+
+		try {
+			Connection con = DriverManager.getConnection(url, dbId, pwd);
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+
+			try (con; st; rs;) {
+				while (rs.next()) {
+					list.add(rs.getString(1));
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		model.addAttribute("customers", list);
+	}
+
+	@RequestMapping("link5")
+	public void method05(Model model) {
+		// 업무 : 고객이름들 조회
+		String sql = "SELECT firstName FROM Employees";
+
+		List<String> list = new ArrayList<>();
+
+		try {
+			Connection con = DriverManager.getConnection(url, dbId, pwd);
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+
+			try (con; st; rs;) {
+				while (rs.next()) {
+					list.add(rs.getString("firstName"));
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		model.addAttribute("employees", list);
 	}
 }
