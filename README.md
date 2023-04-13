@@ -54,3 +54,4 @@
 2023.04.10 52일차 JSP 톰캣 10.1 https://github.com/ChunPingE/JSPStudy2/tree/master <br>
 2023.04.11 53일차 JSP 필터 + SpringBoot 시작 <br>
 2023.04.12 54일차 SpringBoot request param & addAttribute <br>
+2023.04.13 55일차 SpringBoot request param & addAttribute + DB&SQL 시작 <br>
