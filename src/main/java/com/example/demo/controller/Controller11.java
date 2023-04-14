@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class Controller11 {
 	@Value("${spring.datasource.url}")
 	private String url;
-	@Value("${spring.datasource.name}")
+	@Value("${spring.datasource.username}")
 	private String dbId;
 	@Value("${spring.datasource.password}")
 	private String pwd;
@@ -77,6 +77,7 @@ public class Controller11 {
 		try (Connection con = DriverManager.getConnection(url, dbId, pwd);
 				Statement st = con.createStatement();
 				ResultSet rs = st.executeQuery(sql);) {
+			
 			if (rs.next()) {
 				productName = rs.getString("productname");
 			}
