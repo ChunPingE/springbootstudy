@@ -29,6 +29,7 @@ public class Controller14 {
 		if (keyword == null) {
 			keyword = "";
 		}
+
 		List<Customer> list = new ArrayList<>();
 		try {
 			Connection con = DriverManager.getConnection(url, dbId, pwd);
@@ -53,11 +54,11 @@ public class Controller14 {
 		return "/sub13/link1";
 	}
 
-	//추가업무 : ConatctName에도 키워드 조회 추가
-	//1.쿼리수정
-	//2.pstmt에 2번째 물음표에 set하는 코드추가
-	//3.Customer 자바빈 contactName 프로퍼티 추가
-	//4./.sub13/link1 뷰에 contactName 속성 출력하는 테이블 열 추가
+	// 추가업무 : ConatctName에도 키워드 조회 추가
+	// 1.쿼리수정
+	// 2.pstmt에 2번째 물음표에 set하는 코드추가
+	// 3.Customer 자바빈 contactName 프로퍼티 추가
+	// 4./.sub13/link1 뷰에 contactName 속성 출력하는 테이블 열 추가
 	@RequestMapping("link2")
 	public String method2(String keyword, Model model) {
 		String sql = "SELECT customerId, customerName, contactName, address FROM Customers "
