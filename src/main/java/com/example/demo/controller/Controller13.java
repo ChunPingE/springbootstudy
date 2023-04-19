@@ -35,8 +35,8 @@ public class Controller13 {
 					String address = rs.getString("address");
 
 					Customer customer = new Customer();
-					customer.setId(id);
-					customer.setName(name);
+					customer.setCustomerId(id);
+					customer.setContactName(name);
 					customer.setAddress(address);
 					list.add(customer);
 				}
@@ -85,8 +85,8 @@ public class Controller13 {
 			try (con; st; rs;) {
 				while (rs.next()) {
 					Customer customer = new Customer();
-					customer.setId(rs.getInt("customerId"));
-					customer.setName(rs.getString("customerName"));
+					customer.setCustomerId(rs.getInt("customerId"));
+					customer.setContactName(rs.getString("customerName"));
 					customer.setAddress(rs.getString("address"));
 					list.add(customer);
 				}
@@ -112,8 +112,8 @@ public class Controller13 {
 			try (con; pstmt; rs;) {
 				while (rs.next()) {
 					Customer customer = new Customer();
-					customer.setId(rs.getInt("customerId"));
-					customer.setName(rs.getString("customerName"));
+					customer.setCustomerId(rs.getInt("customerId"));
+					customer.setContactName(rs.getString("customerName"));
 					customer.setAddress(rs.getString("address"));
 					list.add(customer);
 				}

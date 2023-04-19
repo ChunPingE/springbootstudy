@@ -4,8 +4,11 @@ import lombok.*;
 
 @Data
 public class Customer {
-	private int id;
-	private String name;
-	private String address;
+	private int customerId;
+	private String customerName;
 	private String contactName;
+	private String address;
+	private String city;
+	private String postalCode;
+	private String Country;
 }

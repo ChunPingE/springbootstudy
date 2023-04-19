@@ -40,8 +40,8 @@ public class Controller14 {
 			try (con; pstmt; rs;) {
 				while (rs.next()) {
 					Customer customer = new Customer();
-					customer.setId(rs.getInt("customerid"));
-					customer.setName(rs.getString("customername"));
+					customer.setCustomerId(rs.getInt("customerid"));
+					customer.setCustomerName(rs.getString("customername"));
 					customer.setAddress(rs.getString("address"));
 					list.add(customer);
 				}
@@ -78,8 +78,8 @@ public class Controller14 {
 			try (con; pstmt; rs;) {
 				while (rs.next()) {
 					Customer customer = new Customer();
-					customer.setId(rs.getInt("customerId"));
-					customer.setName(rs.getString("customerName"));
+					customer.setCustomerId(rs.getInt("customerId"));
+					customer.setCustomerName(rs.getString("customerName"));
 					customer.setAddress(rs.getString("address"));
 					customer.setContactName(rs.getString("contactName"));
 					list.add(customer);

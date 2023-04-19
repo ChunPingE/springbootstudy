@@ -188,7 +188,7 @@ public class Controller15 {
 		try {
 			Connection con = DriverManager.getConnection(url, dbId, pwd);
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, customer.getName());
+			pstmt.setString(1, customer.getCustomerName());
 			pstmt.setString(2, customer.getContactName());
 			pstmt.setString(3, customer.getAddress());
 			try (con; pstmt;) {
@@ -260,8 +260,8 @@ public class Controller15 {
 			try (con; pstmt; rs;) {
 				while (rs.next()) {
 					Customer customer = new Customer();
-					customer.setId(rs.getInt("customerId"));
-					customer.setName(rs.getString("customerName"));
+					customer.setCustomerId(rs.getInt("customerId"));
+					customer.setCustomerName(rs.getString("customerName"));
 					customer.setAddress(rs.getString("city"));
 					list.add(customer);
 				}
