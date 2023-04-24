@@ -10,6 +10,6 @@ public class Employee {
 	private String lastName;
 	private String firstName;
 	private LocalDate birth;
-	private String Photo;
-	private String Notes;
+	private String photo;
+	private String notes;
 }

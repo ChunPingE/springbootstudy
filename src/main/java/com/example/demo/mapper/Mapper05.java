@@ -18,7 +18,7 @@ public interface Mapper05 {
 			+ "WHERE CustomerId = #{id}")
 	int sql3(int id, String name, String country);
 	
-	@Update("UPDATE Customers SET"
+	@Update("UPDATE Customers SET "
 			+ "CustomerName = #{name}, "
 			+ "ContactName = #{contactName}, "
 			+ "Address = #{address}, "
@@ -31,6 +31,19 @@ public interface Mapper05 {
 	@Select("SELECT CustomerId id, CustomerName name, ContactName, Address, City, Country, PostalCode "
 			+ "FROM Customers WHERE CustomerId = #{id}")
 	Customer sql5(int id);
+	
+	@Select("SELECT EmployeeId,lastName, firstName, Birthdate birth, Photo, Notes "
+			+ "FROM Employees WHERE EmployeeId = #{id}")
+	Employee sql6(int id);
+	
+	@Update("UPDATE Employees SET "
+			+ "lastName = #{lastName}, "
+			+ "firstName = #{firstName}, "
+			+ "birthdate = #{birth}, "
+			+ "photo = #{photo}, "
+			+ "notes = #{notes} "
+			+ "WHERE employeeId = #{employeeId}")
+	int sql7(Employee employee);
 }
 
 

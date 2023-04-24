@@ -14,19 +14,19 @@ public class Controller24 {
 
 	@Autowired
 	private Mapper05 mapper;
-	
+
 	@RequestMapping("link1")
-	public void method1( ) {
+	public void method1() {
 		int cnt = mapper.sql1();
 		System.out.println(cnt + "개 행 수정됨");
 	}
-	
+
 	@RequestMapping("link2")
 	public void method2() {
 		int cnt = mapper.sql2(6, "마이바티스", 98765);
 		System.out.println(cnt + "개 행 변경됨");
 	}
-	
+
 	@RequestMapping("link3")
 	public void method3() {
 		// 10번 고객 이름과 국가가 변경 되도록
@@ -34,10 +34,10 @@ public class Controller24 {
 		int cnt = mapper.sql3(10, "새로운 고객명", "대한민국");
 		System.out.println(cnt + "개 행 변경됨");
 	}
-	
+
 	@RequestMapping("link4")
 	public void method4() {
-		
+
 		Customer customer = new Customer();
 		customer.setCustomerId(9);
 		customer.setCity("서울");
@@ -46,32 +46,35 @@ public class Controller24 {
 		customer.setContactName("강백호");
 		customer.setCustomerName("서태웅");
 		customer.setPostalCode("333333");
-		
+
 		int cnt = mapper.sql4(customer);
 		System.out.println(cnt + "개 행 수정됨");
 	}
-	
+
 	@RequestMapping("link5")
 	public void method(Customer customer) {
 		int cnt = mapper.sql4(customer);
 		System.out.println(cnt + "개 행 수정됨");
 	}
-	
+
 	// /sub24/link6?id=9
 	@RequestMapping("link6")
 	public void method(Integer id, Model model) {
 		Customer customer = mapper.sql5(id);
 		model.addAttribute("customer", customer);
 	}
-	
+
 	// 직원 조회 및 수정 코드 작성
+	@RequestMapping("link7")
+	public void method(int id, Model model) {
+		Employee employee = mapper.sql6(id);
+		model.addAttribute("employee", employee);
+	}
+
+	@RequestMapping("link8")
+	public void method(Employee employee) {
+		int cnt = mapper.sql7(employee);
+		System.out.println(cnt + "개 행 수정됨");
+	}
+
 }
-
-
-
-
-
-
-
-
-
