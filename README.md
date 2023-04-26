@@ -55,3 +55,13 @@
 2023.04.11 53일차 JSP 필터 + SpringBoot 시작 <br>
 2023.04.12 54일차 SpringBoot request param & addAttribute <br>
 2023.04.13 55일차 SpringBoot request param & addAttribute + DB&SQL 시작 <br>
+2023.04.14 56일차 SpringBoot ResultSet + SQL 연산자 <br>
+2023.04.17 57일차 DB 정렬 집계 연산자 Insert Delete Update <br>
+2023.04.18 58일차 SpringBoot JDBC Insert Delete Update <br>
+2023.04.19 59일차 SpringBoot JDBC 트랜젝션 + DB 테이블 설계 <br>
+2023.04.20 60일차 SpringBoot 마이바티스 <br>
+2023.04.21 61일차 SpringBoot 마이바티스 <br>
+2023.04.24 62일차 SpringBoot 마이바티스 <br>
+2023.04.25 63일차 SpringBoot 마이바티스 + DB 데이터 정규화 <br>
+2023.04.26 64일차 SpringBoot @GetMapping, @PostMapping, RedirectAttributes + DB 서브쿼리<br>
+2023.04.27 65일차 간단한 프로젝트 시작 리포지터리 변경, 추가 사항 통합해서 진행예정 https://github.com/ChunPingE/First-Project <br>
