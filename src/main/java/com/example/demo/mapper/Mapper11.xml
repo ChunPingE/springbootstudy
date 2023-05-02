@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.Mapper11">
+	<resultMap type="com.example.demo.domain.Category"
+		id="categoryResult">
+		<id column="CategoryId" property="id" />
+		<result column="CategoryName" property="name" />
+		<result column="Description" property="description" />
+		<collection property="products" ofType="String">
+			<result column="ProductName" />
+		</collection>
+	</resultMap>
+
+	<resultMap type="com.example.demo.domain.Category"
+		id="categoryResultMap">
+		<id column="categoryId" property="id" />
+		<result column="categoryName" property="name" />
+		<result column="description" property="description" />
+		<collection property="products"
+			ofType="com.example.demo.domain.Product">
+			<result column="productName" property="name" />
+			<result column="price" property="price" />
+		</collection>
+	</resultMap>
+	<!-- 
+	<select id="sql2" resultMap="categoryResultMap"> SELECT c.CategoryID,
+		c.CategoryName, c.Description, p.ProductName, p.Price FROM Categories
+		c LEFT
+		JOIN Products p ON c.CategoryID = p.CategoryID WHERE c.CategoryId = #{id}
+	</select>
+	-->
+	
+	<resultMap type="com.example.demo.domain.SupplerView"
+		id="supplierResult">
+		<id column="supplierId" property="supplierId" />
+		<result column="supplierName" property="supplierName" />
+		<result column="contactName" property="contactName" />
+		<result column="address" property="address" />
+		<result column="city" property="city" />
+		<result column="postalCode" property="postalCode" />
+		<result column="country" property="country" />
+		<result column="phone" property="phone" />
+		<collection property="products"
+			ofType="com.example.demo.domain.Product">
+			<result column="ProductName" property="name" />
+			<result column="price" property="price" />
+		</collection>
+	</resultMap>
+</mapper>

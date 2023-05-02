@@ -5,7 +5,7 @@ import java.util.*;
 import lombok.*;
 
 @Data
-public class Supplier {
+public class SupplerView {
 	private int supplierId;
 	private String supplierName;
 	private String contactName;
@@ -14,4 +14,5 @@ public class Supplier {
 	private String postalCode;
 	private String country;
 	private String phone;
+	private List<Product> products;
 }
