@@ -1,20 +1,10 @@
 package com.example.demo.controller;
 
-import java.io.*;
-
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.access.prepost.*;
+import org.springframework.security.core.*;
 import org.springframework.stereotype.*;
+import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.*;
-
-import jakarta.annotation.*;
-import software.amazon.awssdk.auth.credentials.*;
-import software.amazon.awssdk.awscore.exception.*;
-import software.amazon.awssdk.core.exception.*;
-import software.amazon.awssdk.core.sync.RequestBody;
-import software.amazon.awssdk.regions.*;
-import software.amazon.awssdk.services.s3.*;
-import software.amazon.awssdk.services.s3.model.*;
 
 @Controller
 @RequestMapping("sub33")
@@ -22,6 +12,25 @@ public class Controller33 {
 
 	@GetMapping("mylogin")
 	public void loginForm() {
-		
 	}
+	
+	@GetMapping("loginSuccess")
+	public void loginSuccess(Authentication authentication, Model model) {
+		model.addAttribute("conname", authentication.getName());
+	}
+	
+	@GetMapping("viewAtuh")
+	public void viewAuth(Authentication authentication) {
+		System.out.println("로그인 정보 확인하기");
+		System.out.println(authentication);
+		//이름얻기
+		System.out.println(authentication.getName());
+	}
+	
+	@GetMapping("customCheck")
+	@PreAuthorize("@securityUtil.checkBoardWriter(authentication, #id)")
+	public void customCheck(String id) {
+		System.out.println("customCheck 메소드 실행 중");
+	}
+	
 }
