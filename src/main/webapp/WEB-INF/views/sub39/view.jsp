@@ -42,6 +42,44 @@
 	<div>
 		<button id="btn8">실패 후 실행 done fail always</button>
 	</div>
+	<hr />
+	<div>
+		<button id="btn9">본문이 있는 성공 응답</button>
+	</div>
+	<hr />
+	<div>
+		<button id="btn10">본문이 있는 성공 응답 2</button>
+		<div id="res10"></div>
+	</div>
+	<hr />
+	<div>
+		<button id="btn11">JSON 응답</button>
+		<div id="res11"></div>
+	</div>
+	<hr />
+	<div>
+		<button id="btn12">JSON 응답 2</button>
+	</div>
+	<hr />
+	<div>
+		<button id="btn13">배열 응답</button>
+	</div>
+	<hr />
+	<div>
+		<input type="text" id="categoryIdInput" value="1"/>
+		<button id="btn14">객체 응답 </button>
+		<div>
+			<div id="res14"></div>
+		</div>
+	</div>
+	<hr />
+	<div>
+		<button id="btn15">객체 응답 테이블로 보여주기 </button>
+		<div>
+			<div id="res15"></div>
+		</div>
+	</div>
+	
 
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
