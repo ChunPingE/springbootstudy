@@ -85,6 +85,11 @@ public class Controller36 {
 		System.out.println(dto); // 값 출력
 	}
 	
+	@PostMapping("link7")
+	public void mehtod7(@RequestBody List<Dto1> dto) {
+		dto.forEach(System.out::println);
+	}
+	
 	
 	
 	

@@ -96,9 +96,65 @@ $("#btn6").click(function() {
 })
 
 
+$("#btn7").click(function() {
+	const data = [
+		{
+			name: "park",
+			age: 26
+		},
+		{
+			name: "can",
+			age: 1700
+		},
+		{
+			name: "uni",
+			age: 4
+		}
+	]
 
+	$.ajax("/sub36/link7", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+})
 
+//////////////////
 
+$("#btn8").click(function() {
+	const name = $("#inputName1").val();
+	const age = $("#inputAge").val();
+	const data = {
+		name: name,
+		age: age
+	};
+
+	$.ajax("/sub36/link1", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+})
+
+$("#btn9").click(function() {
+	const name = $("#inputName2").val();
+	const email = $("#inputEmail2").val();
+	const score = $("#inputScore2").val();
+	//const married = document.querySelector("#inputMarried2").checked;
+	const married = $("#inputMarried2").is(":checked");
+	const data = {
+		name: name,
+		email: email,
+		score: score,
+		married: married
+	}
+
+	$.ajax("/sub36/link2", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+})
 
 
 
